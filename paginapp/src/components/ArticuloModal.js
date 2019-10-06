@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button'
 import Grid from '@material-ui/core/Grid'
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import Close from '@material-ui/icons/Close'
+import imagen from '../static/images/1.png'
 const useStyles = makeStyles(theme => ({
   modal: {
     display: 'flex',
@@ -62,9 +63,14 @@ const useStyles = makeStyles(theme => ({
     float:'left'
   },
   close: {
+    
     position: 'relative',
     float: 'right',
     background: 'rgba(255, 0, 0, 0.4)',
+  },
+  closediv:{
+    backgroundImage: `url(${imagen})`,
+    repeat:'repeat',
   }
 
 }));
@@ -110,7 +116,7 @@ export default function ArticuloModal(props) {
               <Grid container xs={12}>
                 {/* Botones */}
                 
-                <Grid item xs={12}>
+                <Grid className={classes.closediv} item xs={12}>
                   <Button className={classes.close} onClick={onClick}>
                     <Close />
                   </Button>
@@ -119,7 +125,7 @@ export default function ArticuloModal(props) {
                 {/* Autor y fecha */}
                 <Grid item container xs={6} >
                   <Grid item xs={3}>
-                    <div className={classes.centered}>
+                    <div >
                       <p ><b>Autor:</b> Ejemplo </p><br />
                     </div>
 
@@ -178,7 +184,7 @@ export default function ArticuloModal(props) {
             <div className={classes.paper}>
               <Grid container xs={12}>
               
-                <Grid item xs={12}>
+                <Grid className={classes.closediv}item xs={12}>
                   <Button className={classes.close} onClick={onClick}>
                     <Close />
                   </Button>
@@ -187,15 +193,15 @@ export default function ArticuloModal(props) {
                 {/* Autor y fecha */}
                 <Grid item container xs={12} >
                   <Grid item xs={6}>
-                    <div className={classes.centered}>
-                      <p ><b>Autor:</b> Ejemplo </p><br />
+                    <div >
+                      <p style={{padding:'5%'}}><b>Autor:</b> Ejemplo </p><br />
                     </div>
 
                   </Grid>
 
                   <Grid item xs={6}>
-                    <div className={classes.centered}>
-                      <p ><b>Fecha:</b> 01 de enero del 01 </p><br />
+                    <div >
+                      <p style={{padding:'5%'}}><b>Fecha:</b> 01 de enero del 01 </p><br />
                     </div>
                   </Grid>
 

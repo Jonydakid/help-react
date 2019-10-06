@@ -33,6 +33,9 @@ var style = makeStyles({
         left: '50%',
         minHeight: '100%',
         minWidth: '100%'
+    },
+    h2:{
+        color:'red !important'
     }
 })
 
@@ -61,7 +64,7 @@ export default class Articulo extends Component {
                                 title={titulo}
                             />
                             <CardContent>
-                                <Typography gutterBottom variant="h5" component="h2">
+                                <Typography classes={{h2:this.state.style.h2}} variant="h2">
                                     {titulo}
                                 </Typography>
                                 <Typography variant="body2" color="textSecondary" component="p">

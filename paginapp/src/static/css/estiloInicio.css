@@ -1,0 +1,177 @@
+#altura{
+    height:300px;
+  }
+  #forma1{
+    fill:#f7f5f5;
+    margin-bottom: 10%;
+  }
+  .contraste{
+      color:#f7f5f5;
+  }
+  .input-field > label {
+      color:#f7f5f5;
+  }
+  .sss{
+    visibility: hidden;
+    display: none;
+  }
+ .input-field input[type=text]:focus + label,input[type=tel]:focus + label,input[type=email]:focus + label, .materialize-textarea:focus:not([readonly]) + label {
+    color: white !important;
+ }
+ input:not([type]):focus:not([readonly]), input[type="text"]:not(.browser-default):focus:not([readonly]), input[type="password"]:not(.browser-default):focus:not([readonly]), input[type="email"]:not(.browser-default):focus:not([readonly]), input[type="url"]:not(.browser-default):focus:not([readonly]), input[type="time"]:not(.browser-default):focus:not([readonly]), input[type="date"]:not(.browser-default):focus:not([readonly]), input[type="datetime"]:not(.browser-default):focus:not([readonly]), input[type="datetime-local"]:not(.browser-default):focus:not([readonly]), input[type="tel"]:not(.browser-default):focus:not([readonly]), input[type="number"]:not(.browser-default):focus:not([readonly]), input[type="search"]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid white;
+    -webkit-box-shadow: 0 1px 0 0 white;
+    box-shadow: 0 1px 0 0 white;
+
+}
+.txtSlide{
+  margin-left: -10%;
+  margin-right: 70%;
+}
+   
+  #forma2{
+    fill:#f7f5f5;
+    margin-bottom: -28px;
+  }
+
+  #curva {
+    fill: #f7f5f5;
+    bottom: -1px;
+    width: 100%;
+    position: absolute;
+  }
+
+  #slideSEC{
+    background-color: #f7f5f5;
+  
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+ 
+  .slider{
+    background-color: #f7f5f5;
+    border: 0;
+  }
+  .fondoHeader{
+    background-color: #f7f5f5;
+  }
+
+  .bx-wrapper {
+    -moz-box-shadow: 0 0 0px !important;
+    -webkit-box-shadow: 0 0 0px !important;
+    box-shadow: 0 0 0px !important;
+    border: 0px !important;
+  }
+
+  .titServ{
+    color: #4495c6;
+  }
+  
+  
+  #imgDoc{
+    float: right;
+    width: 60%;
+    
+  }
+  
+  #textoSld{
+    color: green;
+    width: 100%;
+  }
+
+  #txtServ{
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: 16px !important;
+  }
+
+
+
+   @media (min-width: 1441px)  {
+    #textoSld h2{
+      font-size: 200% !important ;    
+    }
+
+    .textoSld2{
+      font-size: 150%;
+      text-align: justify;
+      text-justify: inter-word;
+    }
+
+    .divServ{
+      margin: 10%;
+    }
+  
+    #txtServ{
+      font-size: 18px !important;
+
+    }
+  }
+  
+  
+  @media (min-width: 993px) and (max-width: 1440px) {
+    #textoSld h2{
+      font-size: 180% ;    
+    }
+    .textoSld2{
+      font-size: 105%;
+      text-align: justify;
+      text-justify: inter-word;
+    }
+    #txtServ{
+      font-size: 17px !important;
+    }
+
+    .divServ{
+      margin: 7%;
+    }
+
+    .conServ{
+      width: 90%;
+   
+    }
+  }
+
+  @media (min-width: 481px) and (max-width: 992px) {
+    #imgDoc{
+      float: right;
+      width: 100%;      
+    }
+    .divServ{
+      margin: 7%;
+    }
+
+    #txtServ{
+      font-size: 16px !important;
+
+    }
+
+    .conServ{
+      width: 90%;
+   
+    }
+ 
+  }
+
+  @media (max-width: 480px) {
+    #imgDoc{
+      float: right;
+      width: 100%;      
+    }
+    #imgBebe{
+      float: right;
+     
+    }
+
+    .textoSld2{
+      font-size: 105%;
+      text-align: justify;
+      text-justify: inter-word;
+    }
+
+    #txtServ{
+      font-size: 16px !important;
+    }
+  }

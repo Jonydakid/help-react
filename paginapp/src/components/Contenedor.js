@@ -5,6 +5,7 @@ import Articulos from "../pages/Articulos";
 import Container from "@material-ui/core/Container";
 import {makeStyles} from "@material-ui/core/styles";
 import About from "../pages/About";
+import Inicio from "../pages/Inicio"
 
 
 const useStyles = makeStyles(theme=>({
@@ -35,7 +36,7 @@ export default function Contenedor() {
       <Header />
       
       <Container fixed className={stile.root}  >
-        <Route exact path="/"/>
+        <Route exact path="/" component={Inicio}/>
         <Route path="/articulos" component={Articulos} />
         <Route path="/about" component={About} />
       </Container>
