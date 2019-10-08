@@ -5,6 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuThree from './MenuThree'
+import { Link } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -41,7 +42,7 @@ export default function TopNav() {
                     <Toolbar>
 
                         <Typography variant="h6" className={classes.title}>
-                            Servicio de Rescate Médico
+                            <Link color='inherit' underline='none' href='/'>Servicio Rescate Medico</Link>
                         </Typography>
 
                         <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
