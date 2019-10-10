@@ -14,6 +14,8 @@ const useStyles = makeStyles(theme => ({
         width: '100%',
 
     },
+    forma1:{fill:'#f7f5f5',
+    margiBottom: '10%', width:'100%'}
 }))
 
 
@@ -101,85 +103,89 @@ function Inicio() {
             </Grid>
 
             <Grid style={{ marginTop: '2%' }} container xs={12} sm={12}>
-                <Grid item xs={12} sm={6}>
-                    <img alt='HelpAmbulancia' style={{ width: '100%',marginRight:'1%' }} src='https://www.help.cl/wp-content/themes/help_template/assets/img/home/1.jpg' />
-                </Grid>
-                <Grid item style={{padding:'1%'}} xs={12} sm={6}>
-                    <Typography style={{ color: 'rgb(0,0,0)', textAlign: 'center' }} variant="h5">
-                        <FontAwesomeIcon style={{ paddingRight: '5px' }} icon={faEnvelope} /> Solicite un presupuesto</Typography>
-                    <form noValidate autoComplete="off">
-                        <Grid item xs={12} sm={12}>
-                            <TextField
-                                id="outlined-name"
-                                label="Nombre"
-                                className={classes.textField}
-                                value={values.name}
-                                onChange={handleChange('name')}
-                                margin="normal"
-                                variant="outlined"
-                            />
-                        </Grid>
-                        <Grid item xs={12} sm={12}>
-                            <TextField
-                                id="outlined-name"
-                                label="E-Mail"
-                                className={classes.textField}
-                                value={values.name}
-                                onChange={handleChange('name')}
-                                margin="normal"
-                                variant="outlined"
-                            />
-                        </Grid>
-                        <Grid item xs={12} sm={12}>
-                            <TextField
-                                id="outlined-name"
-                                label="Telefono"
-                                className={classes.textField}
-                                value={values.name}
-                                onChange={handleChange('name')}
-                                margin="normal"
-                                variant="outlined"
-                            />
-                        </Grid>
-                        <Grid item xs={12} sm={12}>
-                            <TextField
-                                id="outlined-name"
-                                label="Comentarios"
-                                className={classes.textField}
-                                value={values.name}
-                                onChange={handleChange('name')}
-                                margin="normal"
-                                variant="outlined"
-                            />
-                        </Grid>
-                        <Grid item style={{ textAlign: 'center' }} xs={12} sm={12}>
-                            <Button style={{ backgroundColor: '#2bbbad', color: 'white' }}>Enviar<FontAwesomeIcon styles={{ paddingLeft: '5px' }} icon={faPaperPlane} /></Button>
-
-                        </Grid>
-
-                        <Grid item style={{ textAlign: 'center', paddingTop: '2%' }} xs={12} sm={12}>
-                            <Typography style={{
-                                color: 'black', fontSize: '17px', float: 'center', marginLeft: 'auto', width: '100%', left: 'auto', right: 'auto'
-                            }} variant="body2" color="textSecondary" component="p">
-                                Su mensaje será recibido por el área de ventas.
-                            </Typography>
-                        </Grid>
-
-                        <Grid item style={{ textAlign: 'center', paddingTop: '2%' }} xs={12} sm={12}>
-                            <Typography style={{
-                                color: 'black', fontSize: '17px', float: 'center', marginLeft: 'auto', width: '100%', left: 'auto', right: 'auto'
-                            }} variant="body2" color="textSecondary" component="p">
-                                Teléfono de contacto: 934400227 <FontAwesomeIcon style={{ paddingLeft: '5px' }} icon={faPhone} />
-                            </Typography>
-                        </Grid>
-
-
-
-                    </form>
-                </Grid>
+                <svg className={classes.forma1}>
+                        <path d="M 0,0 V 70 C 7.9990214,45.298551 24.219654,33.575192 41.425299,27.78744 63.669513,20.30478 90.636759,32.617451 100.27621,45.904857 L 100,0 Z"/>
+                
+                </svg>
+            <Grid item xs={12} sm={6}>
+                <img alt='HelpAmbulancia' style={{ width: '100%', marginRight: '1%' }} src='https://www.help.cl/wp-content/themes/help_template/assets/img/home/1.jpg' />
             </Grid>
+            <Grid item style={{ padding: '1%' }} xs={12} sm={6}>
+                <Typography style={{ color: 'rgb(0,0,0)', textAlign: 'center' }} variant="h5">
+                    <FontAwesomeIcon style={{ paddingRight: '5px' }} icon={faEnvelope} /> Solicite un presupuesto</Typography>
+                <form noValidate autoComplete="off">
+                    <Grid item xs={12} sm={12}>
+                        <TextField
+                            id="outlined-name"
+                            label="Nombre"
+                            className={classes.textField}
+                            value={values.name}
+                            onChange={handleChange('name')}
+                            margin="normal"
+                            variant="outlined"
+                        />
+                    </Grid>
+                    <Grid item xs={12} sm={12}>
+                        <TextField
+                            id="outlined-name"
+                            label="E-Mail"
+                            className={classes.textField}
+                            value={values.name}
+                            onChange={handleChange('name')}
+                            margin="normal"
+                            variant="outlined"
+                        />
+                    </Grid>
+                    <Grid item xs={12} sm={12}>
+                        <TextField
+                            id="outlined-name"
+                            label="Telefono"
+                            className={classes.textField}
+                            value={values.name}
+                            onChange={handleChange('name')}
+                            margin="normal"
+                            variant="outlined"
+                        />
+                    </Grid>
+                    <Grid item xs={12} sm={12}>
+                        <TextField
+                            id="outlined-name"
+                            label="Comentarios"
+                            className={classes.textField}
+                            value={values.name}
+                            onChange={handleChange('name')}
+                            margin="normal"
+                            variant="outlined"
+                        />
+                    </Grid>
+                    <Grid item style={{ textAlign: 'center' }} xs={12} sm={12}>
+                        <Button style={{ backgroundColor: '#2bbbad', color: 'white' }}>Enviar<FontAwesomeIcon styles={{ paddingLeft: '5px' }} icon={faPaperPlane} /></Button>
 
+                    </Grid>
+
+                    <Grid item style={{ textAlign: 'center', paddingTop: '2%' }} xs={12} sm={12}>
+                        <Typography style={{
+                            color: 'black', fontSize: '17px', float: 'center', marginLeft: 'auto', width: '100%', left: 'auto', right: 'auto'
+                        }} variant="body2" color="textSecondary" component="p">
+                            Su mensaje será recibido por el área de ventas.
+                            </Typography>
+                    </Grid>
+
+                    <Grid item style={{ textAlign: 'center', paddingTop: '2%' }} xs={12} sm={12}>
+                        <Typography style={{
+                            color: 'black', fontSize: '17px', float: 'center', marginLeft: 'auto', width: '100%', left: 'auto', right: 'auto'
+                        }} variant="body2" color="textSecondary" component="p">
+                            Teléfono de contacto: 934400227 <FontAwesomeIcon style={{ paddingLeft: '5px' }} icon={faPhone} />
+                        </Typography>
+                    </Grid>
+
+
+
+                </form>
+            </Grid>
         </Grid>
+
+        </Grid >
     )
 }
 

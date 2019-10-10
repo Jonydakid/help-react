@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Card from '@material-ui/core/Card'
 import CardActionArea from '@material-ui/core/CardActionArea'
 import CardActions from '@material-ui/core/CardActions'
@@ -7,9 +7,8 @@ import CardMedia from '@material-ui/core/CardMedia'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
-import PropTypes from 'prop-types'
 import ArticuloModal from '../components/ArticuloModal'
-var style = makeStyles({
+var style = makeStyles(theme => ({
     root: {
         flexGrow: 1,
     },
@@ -26,7 +25,7 @@ var style = makeStyles({
         }
 
     },
-    img:{
+    img: {
         display: 'block',
         position: 'absolute',
         top: '50%',
@@ -34,58 +33,43 @@ var style = makeStyles({
         minHeight: '100%',
         minWidth: '100%'
     },
-    h2:{
-        color:'red !important'
+    titulo: {
+        color: 'black',
+        fontSize: '20px',
+        [theme.breakpoints.down('sm')]: {
+            fontSize: '18px'
+        }
     }
-})
+}))
 
 
-export default class Articulo extends Component {
-    state = {
-        style: style,
+export default function Articulo(props) {
+    const { titulo, descripcion, image } =  props.articulo;
+    const stl = style()
+    return (
 
-    }
-
-
-
-    render() {
-        const { titulo, descripcion, image } = this.props.articulo;
-        const stl = style
-
-        return (
-            <React.Fragment>
-                <Grid item xs={6} md={3} spacing={3} >
-                    <Card className={stl.card}>
-                        <CardActionArea>
-                            <CardMedia
-                                component='img'
-                                className={stl.media}
-                                image={image}
-                                title={titulo}
-                            />
-                            <CardContent>
-                                <Typography classes={{h2:this.state.style.h2}} variant="h2">
-                                    {titulo}
-                                </Typography>
-                                <Typography variant="body2" color="textSecondary" component="p">
-                                    {descripcion}
-                                </Typography>
-                            </CardContent>
-                        </CardActionArea>
-                        <CardActions>
-                            <ArticuloModal titulo={titulo} descripcion={descripcion} image={image}/>
-                        </CardActions>
-                    </Card>
-                </Grid>
-            </React.Fragment>
-        )
-    }
-
+        <React.Fragment>
+            <Grid item xs={6} md={3} spacing={3} >
+                <Card className={stl.card}>
+                    <CardActionArea>
+                        <CardMedia
+                            component='img'
+                            className={stl.media}
+                            image={image}
+                            title={titulo}
+                        />
+                        <CardContent>
+                            <Typography className={stl.titulo} >
+                                {titulo}
+                            </Typography>
+                            
+                        </CardContent>
+                    </CardActionArea>
+                    <CardActions>
+                        <ArticuloModal titulo={titulo} descripcion={descripcion} image={image} />
+                    </CardActions>
+                </Card>
+            </Grid>
+        </React.Fragment>
+    )
 }
-
-//Proptypes
-Articulo.propTypes = {
-    articulo: PropTypes.object.isRequired,
-    estilo: PropTypes.func.isRequired
-}
-
