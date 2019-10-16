@@ -1,43 +1,28 @@
 import React from 'react'
-import { AutoRotatingCarousel } from 'material-auto-rotating-carousel';
-import Slide from '@material-ui/core/Slide'
-import { red, blue, green } from '@material-ui/core/colors'
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
 export default function Carrusel(props) {
+    
     return (
         <React.Fragment>
-            <AutoRotatingCarousel
-                label='Get started'
-                style={{ position: 'absolute' }}>
-                <Slide
-                    media={<img alt="Slide 1" src='http://www.icons101.com/icon_png/size_256/id_79394/youtube.png' />}
-                    mediaBackgroundStyle={{ backgroundColor: red[400] }}
-                    style={{ backgroundColor: red[600] }}
-                    title='This is a very cool feature'
-                    subtitle='Just using this will blow your mind.'
-
-                />
-                <Slide
-                    media={<img alt="Slide 2" src='http://www.icons101.com/icon_png/size_256/id_80975/GoogleInbox.png' />}
-                    mediaBackgroundStyle={{ backgroundColor: blue[400] }}
-                    style={{ backgroundColor: blue[600] }}
-                    title='Ever wanted to be popular?'
-                    subtitle='Well just mix two colors and your are good to go!'
-
-                />
-                <Slide
-
-                    media={<img alt="Slide 3" src='http://www.icons101.com/icon_png/size_256/id_76704/Google_Settings.png' />}
-                    mediaBackgroundStyle={{ backgroundColor: green[400] }}
-                    style={{ backgroundColor: green[600] }}
-                    title='May the force be with you'
-                    subtitle='The Force is a metaphysical and ubiquitous power in the Star Wars fictional universe.'
-
-                />
-            </AutoRotatingCarousel>
+            <Carousel showThumbs={false} showStatus={false} infiniteLoop={true} autoPlay={true} interval={5000} transitionTime={500} stopOnHover={false}>
+                <div >
+                    <img src="https://servicio-rescatemedico.cl/img/doctora.jpg" />
+                    <p className="legend">EJEJEEJE</p>
+                </div>
+                <div>
+                    <img src="https://servicio-rescatemedico.cl/img/bebe2.png" />
+                    <p className="legend">EJEJEEJE 2</p>
+                </div>
+                <div>
+                    <img src="https://servicio-rescatemedico.cl/img/camion.JPEG" />
+                    <p className="legend">EJEJEEJE 3</p>
+                </div>
+            </Carousel>
         </React.Fragment>
-    )
-}
-
-
-
-
+            )
+        }
+        
+        
+        
+        

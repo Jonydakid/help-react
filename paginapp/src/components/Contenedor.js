@@ -35,7 +35,7 @@ export default function Contenedor() {
     <Router>
       <Header />
       
-      <Container fixed className={stile.root}  >
+      <Container  className={stile.root}  >
         <Route exact path="/" component={Inicio}/>
         <Route path="/articulos" component={Articulos} />
         <Route path="/about" component={About} />
