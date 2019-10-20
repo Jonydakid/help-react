@@ -151,7 +151,7 @@ function Inicio() {
                 
             </Grid>
             <Grid item xs={12} >
-                <p style={{ color: 'red', textAlign: 'center' }}><FontAwesomeIcon style={{ color: 'red', paddingRight: '5px' }} icon={faAmbulance} />FONO EMERGENCIA 800 800 911 </p>
+                <h2 style={{ color: 'red', textAlign: 'center' }}><FontAwesomeIcon style={{ color: 'red', paddingRight: '5px' }} icon={faAmbulance} />EMERGENCIA 800 800 911 </h2>
             </Grid>
 
             <Grid item xs={12} sm={6} lg={6}>
