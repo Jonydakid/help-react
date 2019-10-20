@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button'
 import { makeStyles } from '@material-ui/core'
-import Carrusel from '../components/Carrusel'
+
 
 
 const useStyles = makeStyles(theme => ({
