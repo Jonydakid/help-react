@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button'
 import { makeStyles } from '@material-ui/core'
-
+import '../static/css/estiloInicio.css';
 
 
 const useStyles = makeStyles(theme => ({
@@ -50,7 +50,82 @@ const useStyles = makeStyles(theme => ({
 
         fontSize: '17px', textAlign: 'justify', float: 'left', width: '80%', left: 'auto', right: 'auto',
         marginLeft: 'auto',
+    },
+
+    formaFooter:{
+        marginLeft:'0% !important;',
+        top:'70%',
+        position:"absolute",
+        left:'0',
+        width:'100%',
+        [theme.breakpoints.down('sm')]:{
+            top:'700px'
+        },
+        [theme.breakpoints.up('sm')]:{
+            top:'700px'
+        },
+        [theme.breakpoints.up('lg')]:{
+            top:'640px',
+            height:'800px',
+        },
+        [theme.breakpoints.down('xs')]:{
+           
+            top:'1080px',
+        },
+    },
+    formaFooterDown:{
+        marginLeft:'0% !important;',
+        top:'180%',
+        position:"absolute",
+        left:'0',
+        width:'100%',
+        [theme.breakpoints.down('sm')]:{
+            top:'280%'
+        },
+        [theme.breakpoints.up('sm')]:{
+            top:'1400px'
+        },
+        [theme.breakpoints.down('xs')]:{
+            top:'2100px'
+        },
+        [theme.breakpoints.up('lg')]:{
+            top:'1430px',
+
+        }
+    },
+    fondoGrad2:{
+        backgroundImage: "-webkit-linear-gradient(left , rgb(96, 172, 64) , rgb(255, 170, 133) 100%);background-image:-moz-linear-gradient(left , rgb(96, 172, 64) , rgb(255, 170, 133) 100%);background-image:-o-linear-gradient(left , rgb(96, 172, 64) , rgb(255, 170, 133) 100%);background-image:linear-gradient(left , rgb(96, 172, 64) , rgb(255, 170, 133) 100%);background-image:-ms-linear-gradient(left , rgb(96, 172, 64) , rgb(255, 170, 133) 100%);",
+        width: '100%',
+        height:'370px',
+        top:'140%',
+        left:'0',
+        position:"absolute",
+        zIndex:'0',
+   
+        [theme.breakpoints.up('xs')]:{
+            height:'1040px',
+            top:'2090px',
+        },
+  
+        [theme.breakpoints.down('xs')]:{
+            height:'1040px',
+            top:'1090px',
+        },
+        [theme.breakpoints.up('sm')]:{
+            top:'700px',
+            height:'730px',
+        },
+        [theme.breakpoints.down('sm')]:{
+            top:'1090px',
+            height:'1040px',
+        },
+        [theme.breakpoints.up('lg')]:{
+            top:'660px',
+            height:'800px',
+        }
     }
+
+
 
 }))
 
@@ -69,7 +144,7 @@ function Inicio() {
     };
     return (
         <React.Fragment>
-            <Carrusel />
+            
         
         <Grid container xs={12} sm={12} lg={12} >
             <Grid item xs={12}>
@@ -131,11 +206,13 @@ function Inicio() {
                 </Grid>
             </Grid>
 
-            <Grid style={{ marginTop: '2%' }} container xs={12} sm={12}>
-                <svg className={classes.forma1}>
-                    <path d="M 0,0 V 70 C 7.9990214,45.298551 24.219654,33.575192 41.425299,27.78744 63.669513,20.30478 90.636759,32.617451 100.27621,45.904857 L 100,0 Z" />
+	    <div id="formaPresupuesto" style={{ height: '150px' }}><p>&nbsp;</p></div>
+        
+            <div className={classes.fondoGrad2}></div>  
 
-                </svg>
+
+            <Grid style={{ marginTop: '2%' , zIndex:3}} container xs={12} sm={12}>
+                
                 <Grid item xs={12} sm={6}>
                     <img alt='HelpAmbulancia' style={{ width: '100%', marginRight: '1%' }} src='https://www.help.cl/wp-content/themes/help_template/assets/img/home/1.jpg' />
                 </Grid>
@@ -212,6 +289,24 @@ function Inicio() {
 
                 </Grid>
             </Grid>
+
+
+            <div className={classes.formaFooter}>
+              
+              <svg id="forma1" x="0px" y="0px" viewBox="0 0 100 100" width="100%" height="70px" preserveAspectRatio="none" >
+                          <path d="M 0,0 V 70 C 7.9990214,45.298551 24.219654,33.575192 41.425299,27.78744 63.669513,20.30478 90.636759,32.617451 100.27621,45.904857 L 100,0 Z"></path>
+              </svg>
+            </div> 
+                             
+            <div className={classes.formaFooterDown}>
+              
+            <svg id="forma2"  x="0px" y="0px" viewBox="0 0 100 100" width="100%" height="70px" preserveAspectRatio="none">
+                        <path  d="M 0,70 V 4.7e-6 C 12.970866,23.04417 22.322183,40.213964 41.425298,42.212562 64.368171,44.612882 80.535118,26.057008 99.999996,25.2 V 70 Z"></path>
+            </svg>
+            </div>
+
+
+
 
         </Grid >
         </React.Fragment>
