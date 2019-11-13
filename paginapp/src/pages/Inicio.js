@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDOM from 'react-dom';
 import Grid from '@material-ui/core/Grid'
 import { withStyles } from '@material-ui/styles'
 import Typography from '@material-ui/core/Typography'
@@ -12,7 +13,8 @@ import Switch from '@material-ui/core/Switch';
 import Paper from '@material-ui/core/Paper';
 import Collapse from '@material-ui/core/Collapse';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-
+import Container from "@material-ui/core/Container";
+import Ambulancia from "../static/images/ambulancia-rescatemedico.jpg";
 
 const useStyles = makeStyles(theme => ({
     textField: {
@@ -163,18 +165,27 @@ function Inicio() {
         setValues({ ...values, [name]: event.target.value });
     };
     return (
+    
         <React.Fragment>
 
 
-            <Grid container xs={12} sm={12} lg={12} >
-                <Grid item xs={12}>
+        
+           
 
+        
+
+                <Grid item xs={12}>
                 </Grid>
+
+
+
                 <Grid item xs={12} >
                     <h2 style={{ color: 'red', textAlign: 'center' }}><FontAwesomeIcon style={{ color: 'red', paddingRight: '5px' }} icon={faAmbulance} />EMERGENCIA 800 800 911 </h2>
                 </Grid>
 
-                <Grid item xs={12} sm={6} lg={6}>
+    
+        <Grid container style={{ padding: 30}}>
+                <Grid  xs={12} sm={6} lg={6}>
                     <Typography className={classes.titulo}>
                         Servicios Destacados
                     </Typography>
@@ -183,8 +194,8 @@ function Inicio() {
                     </Typography>
                 </Grid>
 
-                <Grid item container xs={12} sm={6} lg={6}>
-                    <Grid item xs={12} sm={6} lg={6}>
+                <Grid  container xs={12} sm={6} lg={6}>
+                    <Grid  xs={12} sm={6} lg={6}>
                         <Typography className={classes.subtitulo} style={{ color: '#4495c6' }} variant="h5">
                             <FontAwesomeIcon style={{ paddingRight: '5px' }} icon={faPhone} />Atención 24/7
                     </Typography>
@@ -194,7 +205,7 @@ function Inicio() {
 
                     </Grid>
 
-                    <Grid item xs={12} sm={6} lg={6}>
+                    <Grid  xs={12} sm={6} lg={6}>
                         <Typography className={classes.subtitulo} style={{ color: '#4495c6' }} variant="h5">
                             <FontAwesomeIcon style={{ paddingRight: '5px' }} icon={faBriefcaseMedical} />Enfermedades menores
                     </Typography>
@@ -205,7 +216,7 @@ function Inicio() {
 
                     </Grid>
 
-                    <Grid item xs={12} sm={6} lg={6}>
+                    <Grid  xs={12} sm={6} lg={6}>
                         <Typography className={classes.subtitulo} style={{ color: '#4495c6' }} variant="h5">
                             <FontAwesomeIcon style={{ paddingRight: '5px' }} icon={faUserMd} />Equipo médico
                     </Typography>
@@ -215,7 +226,7 @@ function Inicio() {
 
                     </Grid>
 
-                    <Grid item xs={12} sm={6} lg={6}>
+                    <Grid  xs={12} sm={6} lg={6}>
                         <Typography className={classes.subtitulo} style={{ color: '#4495c6' }} variant="h5">
                             <FontAwesomeIcon style={{ paddingRight: '5px' }} icon={faHeartbeat} />Clinica móvil
                     </Typography>
@@ -223,20 +234,32 @@ function Inicio() {
                             En help, las ambulancias son una clinica móvil de alta complejidad de adulto y pediatría.
                     </Typography>
 
-                    </Grid>
-                </Grid>
-
-                <div id="formaPresupuesto" style={{ height: '150px' }}><p>&nbsp;</p></div>
+                    </Grid></Grid>
+                
+        </Grid> 
+        
+                
 
                 <div className={classes.fondoGrad2}></div>
 
 
-                <Grid style={{ marginTop: '2%', zIndex: 3 }} container xs={12} sm={12}>
 
-                    <Grid item xs={12} sm={6}>
-                        <img alt='HelpAmbulancia' style={{ width: '100%', marginRight: '1%' }} src='https://www.help.cl/wp-content/themes/help_template/assets/img/home/1.jpg' />
+
+
+
+
+
+
+            <div id="sec2">
+                <div  style={{ height: '150px' }}><p>&nbsp;</p></div>
+
+                <Grid container style={{ marginTop: '2%', zIndex: 3 }} >
+
+                    <Grid item  xs={12} sm={6} lg={6} style={{ zIndex: 4 }}>
+                        <img alt='HelpAmbulancia' style={{ height: '100%' }} src={Ambulancia} />
                     </Grid>
-                    <Grid item style={{ paddingLeft: '5%' }} xs={12} sm={6}>
+
+                    <Grid item style={{ paddingLeft: '5%', zIndex: 4 }} xs={12} sm={6} lg={6} >
                         <Typography style={{ color: 'rgb(0,0,0)', paddingTop: '5%' }} variant="h5">
                             <FontAwesomeIcon icon={faEnvelope} /> Solicite un presupuesto</Typography>
 
@@ -367,6 +390,7 @@ function Inicio() {
                     </Grid>
                 </Grid>
 
+            </div>
 
                 <div className={classes.formaFooter}>
 
@@ -385,7 +409,7 @@ function Inicio() {
 
 
 
-            </Grid >
+           
         </React.Fragment >
     )
 }

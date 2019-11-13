@@ -2,7 +2,11 @@ body {
   background-color: #f7f5f5 !important;
 }
 
-
+#contenido{
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
 
 #altura{
     height:300px;

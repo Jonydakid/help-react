@@ -2,7 +2,7 @@ import React from 'react'
 import Header from '../layout/Header';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Articulos from "../pages/Articulos";
-import Container from "@material-ui/core/Container";
+
 import {makeStyles} from "@material-ui/core/styles";
 import About from "../pages/About";
 import Inicio from "../pages/Inicio"
@@ -11,6 +11,8 @@ import Inicio from "../pages/Inicio"
 const useStyles = makeStyles(theme=>({
 
   root: {
+    marginLeft:'0',
+    marginRight:'0',
     borderRadius: 3,
     border: 'auto',
     color: 'white',
@@ -35,11 +37,11 @@ export default function Contenedor() {
     <Router>
       <Header />
       
-      <Container  className={stile.root}  >
+      <div  className={stile.root}  >
         <Route exact path="/" component={Inicio}/>
         <Route path="/articulos" component={Articulos} />
         <Route path="/about" component={About} />
-      </Container>
+      </div>
     </Router>
   )
 }
