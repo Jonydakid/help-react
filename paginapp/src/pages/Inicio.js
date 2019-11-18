@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Grid from '@material-ui/core/Grid'
 import { withStyles } from '@material-ui/styles'
 import Typography from '@material-ui/core/Typography'
-import { faAmbulance, faPhone, faBriefcaseMedical, faUserMd, faHeartbeat, faPaperPlane, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faAmbulance, faPhone, faBriefcaseMedical, faUserMd, faHeartbeat, faPaperPlane, faEnvelope,faUser,faFolderOpen,faFileSignature } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button'
@@ -15,6 +15,8 @@ import Collapse from '@material-ui/core/Collapse';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Container from "@material-ui/core/Container";
 import Ambulancia from "../static/images/ambulancia-rescatemedico.jpg";
+import Carousel, { Dots } from '@brainhubeu/react-carousel';
+
 
 const useStyles = makeStyles(theme => ({
     textField: {
@@ -165,27 +167,36 @@ function Inicio() {
         setValues({ ...values, [name]: event.target.value });
     };
     return (
-    
+
         <React.Fragment>
 
 
-        
-           
 
-        
 
-                <Grid item xs={12}>
+
+
+
+            <Grid item xs={12}>
+            </Grid>
+
+
+
+            <Grid item container xs={12} >
+                <Grid item xs={4}>
+                <h2 style={{ color: 'red', textAlign: 'center' }}><FontAwesomeIcon style={{ color: 'red', paddingRight: '5px' }} icon={faFileSignature} />Contrata Servicio 934 400 227 </h2>
+                </Grid>
+                <Grid item xs={4}>
+                <h2 style={{ color: 'red', textAlign: 'center',fontSize: '175%' }}><FontAwesomeIcon style={{ color: 'red', paddingRight: '5px' }} icon={faAmbulance} />EMERGENCIA 800 800 911 </h2>
+                </Grid>
+                <Grid item xs={4}>
+                <h2 style={{ color: 'red', textAlign: 'center' }}><FontAwesomeIcon style={{ color: 'red', paddingRight: '5px' }} icon={faFolderOpen} />Desafiliarse XXX XXX XXX </h2>
                 </Grid>
 
+            </Grid>
 
 
-                <Grid item xs={12} >
-                    <h2 style={{ color: 'red', textAlign: 'center' }}><FontAwesomeIcon style={{ color: 'red', paddingRight: '5px' }} icon={faAmbulance} />EMERGENCIA 800 800 911 </h2>
-                </Grid>
-
-    
-        <Grid container style={{ padding: 30}}>
-                <Grid  xs={12} sm={6} lg={6}>
+            <Grid container style={{ padding: 30 }}>
+                <Grid xs={12} sm={6} lg={6}>
                     <Typography className={classes.titulo}>
                         Servicios Destacados
                     </Typography>
@@ -194,8 +205,8 @@ function Inicio() {
                     </Typography>
                 </Grid>
 
-                <Grid  container xs={12} sm={6} lg={6}>
-                    <Grid  xs={12} sm={6} lg={6}>
+                <Grid container xs={12} sm={6} lg={6}>
+                    <Grid xs={12} sm={6} lg={6}>
                         <Typography className={classes.subtitulo} style={{ color: '#4495c6' }} variant="h5">
                             <FontAwesomeIcon style={{ paddingRight: '5px' }} icon={faPhone} />Atención 24/7
                     </Typography>
@@ -205,7 +216,7 @@ function Inicio() {
 
                     </Grid>
 
-                    <Grid  xs={12} sm={6} lg={6}>
+                    <Grid xs={12} sm={6} lg={6}>
                         <Typography className={classes.subtitulo} style={{ color: '#4495c6' }} variant="h5">
                             <FontAwesomeIcon style={{ paddingRight: '5px' }} icon={faBriefcaseMedical} />Enfermedades menores
                     </Typography>
@@ -216,7 +227,7 @@ function Inicio() {
 
                     </Grid>
 
-                    <Grid  xs={12} sm={6} lg={6}>
+                    <Grid xs={12} sm={6} lg={6}>
                         <Typography className={classes.subtitulo} style={{ color: '#4495c6' }} variant="h5">
                             <FontAwesomeIcon style={{ paddingRight: '5px' }} icon={faUserMd} />Equipo médico
                     </Typography>
@@ -226,7 +237,7 @@ function Inicio() {
 
                     </Grid>
 
-                    <Grid  xs={12} sm={6} lg={6}>
+                    <Grid xs={12} sm={6} lg={6}>
                         <Typography className={classes.subtitulo} style={{ color: '#4495c6' }} variant="h5">
                             <FontAwesomeIcon style={{ paddingRight: '5px' }} icon={faHeartbeat} />Clinica móvil
                     </Typography>
@@ -235,12 +246,12 @@ function Inicio() {
                     </Typography>
 
                     </Grid></Grid>
-                
-        </Grid> 
-        
-                
 
-                <div className={classes.fondoGrad2}></div>
+            </Grid>
+
+
+
+            <div className={classes.fondoGrad2}></div>
 
 
 
@@ -251,11 +262,11 @@ function Inicio() {
 
 
             <div id="sec2">
-                <div  style={{ height: '150px' }}><p>&nbsp;</p></div>
+                <div style={{ height: '150px' }}><p>&nbsp;</p></div>
 
                 <Grid container style={{ marginTop: '2%', zIndex: 3 }} >
 
-                    <Grid item  xs={12} sm={6} lg={6} style={{ zIndex: 4 }}>
+                    <Grid item xs={12} sm={6} lg={6} style={{ zIndex: 4 }}>
                         <img alt='HelpAmbulancia' style={{ height: '100%' }} src={Ambulancia} />
                     </Grid>
 
@@ -392,24 +403,24 @@ function Inicio() {
 
             </div>
 
-                <div className={classes.formaFooter}>
+            <div className={classes.formaFooter}>
 
-                    <svg id="forma1" x="0px" y="0px" viewBox="0 0 100 100" width="100%" height="70px" preserveAspectRatio="none" >
-                        <path d="M 0,0 V 70 C 7.9990214,45.298551 24.219654,33.575192 41.425299,27.78744 63.669513,20.30478 90.636759,32.617451 100.27621,45.904857 L 100,0 Z"></path>
-                    </svg>
-                </div>
+                <svg id="forma1" x="0px" y="0px" viewBox="0 0 100 100" width="100%" height="70px" preserveAspectRatio="none" >
+                    <path d="M 0,0 V 70 C 7.9990214,45.298551 24.219654,33.575192 41.425299,27.78744 63.669513,20.30478 90.636759,32.617451 100.27621,45.904857 L 100,0 Z"></path>
+                </svg>
+            </div>
 
-                <div className={classes.formaFooterDown}>
+            <div className={classes.formaFooterDown}>
 
-                    <svg id="forma2" x="0px" y="0px" viewBox="0 0 100 100" width="100%" height="70px" preserveAspectRatio="none">
-                        <path d="M 0,70 V 4.7e-6 C 12.970866,23.04417 22.322183,40.213964 41.425298,42.212562 64.368171,44.612882 80.535118,26.057008 99.999996,25.2 V 70 Z"></path>
-                    </svg>
-                </div>
-
-
+                <svg id="forma2" x="0px" y="0px" viewBox="0 0 100 100" width="100%" height="70px" preserveAspectRatio="none">
+                    <path d="M 0,70 V 4.7e-6 C 12.970866,23.04417 22.322183,40.213964 41.425298,42.212562 64.368171,44.612882 80.535118,26.057008 99.999996,25.2 V 70 Z"></path>
+                </svg>
+            </div>
 
 
-           
+
+
+
         </React.Fragment >
     )
 }
