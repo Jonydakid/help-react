@@ -18,10 +18,7 @@ const useStyles = makeStyles(theme=>({
     border: 'auto',
     color: 'white',
     marginTop:'7%',
-    [theme.breakpoints.down('sm')]:{
-      marginTop:'30%'
-    }
-    
+ 
   },
   label: {
     textTransform: 'capitalize',

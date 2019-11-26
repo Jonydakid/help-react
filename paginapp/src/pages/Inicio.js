@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom';
 import Grid from '@material-ui/core/Grid'
 import { withStyles } from '@material-ui/styles'
 import Typography from '@material-ui/core/Typography'
@@ -10,12 +9,9 @@ import Button from '@material-ui/core/Button'
 import { makeStyles } from '@material-ui/core'
 import '../static/css/estiloInicio.css';
 import Switch from '@material-ui/core/Switch';
-import Paper from '@material-ui/core/Paper';
 import Collapse from '@material-ui/core/Collapse';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Container from "@material-ui/core/Container";
 import Ambulancia from "../static/images/ambulancia-rescatemedico.jpg";
-import Carousel, { Dots } from '@brainhubeu/react-carousel';
 import Carrusel from '../components/Carrusel/Carrusel';
 
 
@@ -63,78 +59,93 @@ const useStyles = makeStyles(theme => ({
 
     formaFooter: {
         marginLeft: '0% !important;',
-        top: '70%',
-        position: "absolute",
+        marginTop: '-15px',
         left: '0',
         width: '100%',
+        position: "absolute",
         [theme.breakpoints.down('sm')]: {
-            top: '700px'
+          
         },
         [theme.breakpoints.up('sm')]: {
-            top: '700px'
+          
         },
         [theme.breakpoints.up('lg')]: {
-            top: '640px',
-            height: '800px',
+        
         },
         [theme.breakpoints.down('xs')]: {
 
-            top: '1080px',
+          
         },
     },
     formaFooterDown: {
         marginLeft: '0% !important;',
-        top: '180%',
         position: "absolute",
+
         left: '0',
         width: '100%',
         [theme.breakpoints.down('sm')]: {
-            top: '280%'
+        
         },
         [theme.breakpoints.up('sm')]: {
-            top: '1400px'
+          
         },
         [theme.breakpoints.down('xs')]: {
-            top: '2100px'
+           
         },
         [theme.breakpoints.up('lg')]: {
-            top: '1430px',
+            
 
         }
     },
     fondoGrad2: {
         backgroundImage: "-webkit-linear-gradient(left , rgb(96, 172, 64) , rgb(255, 170, 133) 100%);background-image:-moz-linear-gradient(left , rgb(96, 172, 64) , rgb(255, 170, 133) 100%);background-image:-o-linear-gradient(left , rgb(96, 172, 64) , rgb(255, 170, 133) 100%);background-image:linear-gradient(left , rgb(96, 172, 64) , rgb(255, 170, 133) 100%);background-image:-ms-linear-gradient(left , rgb(96, 172, 64) , rgb(255, 170, 133) 100%);",
         width: '100%',
-        height: '370px',
-        top: '140%',
+        height: '650px',
+
         left: '0',
+        float:'left',
         position: "absolute",
         zIndex: '0',
 
         [theme.breakpoints.up('xs')]: {
-            height: '1040px',
-            top: '2090px',
+
         },
 
         [theme.breakpoints.down('xs')]: {
-            height: '1040px',
-            top: '1090px',
+
         },
         [theme.breakpoints.up('sm')]: {
-            top: '700px',
-            height: '730px',
+ 
         },
         [theme.breakpoints.down('sm')]: {
-            top: '1090px',
-            height: '1040px',
+            
+        height: '890px',
         },
         [theme.breakpoints.up('lg')]: {
-            top: '660px',
-            height: '800px',
+
         }
-    }
+    },
 
-
+    serviciosTxt: {
+        
+        color: 'rgb(68, 149, 198)',
+        textAlign: 'center',
+        [theme.breakpoints.down('xs')]: {
+            fontSize:'140%',
+            marginTop:'10px',
+        }
+    },
+    emergenciaTxt: {
+        marginTop:'20px',
+        color: 'red',
+        textAlign: 'center',
+        [theme.breakpoints.down('sm')]: {
+            fontSize:'160%',
+            marginTop:'20px',
+            marginBottom:'10px'
+        }
+    },
+    
 
 }))
 
@@ -179,21 +190,23 @@ function Inicio() {
 
             <Carrusel/>
 
-
+               
 
             <Grid item container xs={12} >
-                <Grid item xs={4}>
-                <h2 style={{ color: 'red', textAlign: 'center' }}><FontAwesomeIcon style={{ color: 'red', paddingRight: '5px' }} icon={faFileSignature} />Contrata Servicio 934 400 227 </h2>
+                <Grid id="borderItem" item xs={12} sm={4} lg={4}>
+                    <h2  className={classes.serviciosTxt}><FontAwesomeIcon style={{ color: 'rgb(68, 149, 198)', paddingRight: '5px' }} icon={faFileSignature} />Contrate el Servicio </h2>
+                    <h2  className={classes.serviciosTxt}>934 400 227 </h2>
                 </Grid>
-                <Grid item xs={4}>
-                <h2 style={{ color: 'red', textAlign: 'center',fontSize: '175%' }}><FontAwesomeIcon style={{ color: 'red', paddingRight: '5px' }} icon={faAmbulance} />EMERGENCIA 800 800 911 </h2>
+                <Grid id="borderItem" item xs={12} sm={4} lg={4}>
+                    <h2 className={classes.emergenciaTxt}><FontAwesomeIcon style={{ color: 'red', paddingRight: '5px' }} icon={faAmbulance} />EMERGENCIA 800 800 911 </h2>
                 </Grid>
-                <Grid item xs={4}>
-                <h2 style={{ color: 'red', textAlign: 'center' }}><FontAwesomeIcon style={{ color: 'red', paddingRight: '5px' }} icon={faFolderOpen} />Desafiliarse XXX XXX XXX </h2>
+                <Grid id="borderItem" item xs={12} sm={4} lg={4}>
+                    <h2 className={classes.serviciosTxt} ><FontAwesomeIcon style={{ color: 'rgb(68, 149, 198)', paddingRight: '5px' }} icon={faFolderOpen} />Servicio al cliente</h2>
+                    <h2  className={classes.serviciosTxt}>600 6310 310</h2>
                 </Grid>
 
             </Grid>
-
+            <br />  <br />  <br />                
 
             <Grid container style={{ padding: 30 }}>
                 <Grid xs={12} sm={6} lg={6}>
@@ -258,16 +271,21 @@ function Inicio() {
 
 
 
+            <div className={classes.formaFooter}>
 
+                <svg id="forma1" x="0px" y="0px" viewBox="0 0 100 100" width="100%" height="70px" preserveAspectRatio="none" >
+                    <path d="M 0,0 V 70 C 7.9990214,45.298551 24.219654,33.575192 41.425299,27.78744 63.669513,20.30478 90.636759,32.617451 100.27621,45.904857 L 100,0 Z"></path>
+                </svg>
+            </div>
 
 
             <div id="sec2">
-                <div style={{ height: '150px' }}><p>&nbsp;</p></div>
+               
 
                 <Grid container style={{ marginTop: '2%', zIndex: 3 }} >
 
-                    <Grid item xs={12} sm={6} lg={6} style={{ zIndex: 4 }}>
-                        <img alt='HelpAmbulancia' style={{ height: '100%' }} src={Ambulancia} />
+                    <Grid  align="center" item xs={12} sm={6} lg={6} style={{ zIndex: 4 }}>
+                        <img alt='HelpAmbulancia' style={{ width:'70%', marginTop:'50px', marginLeft:'5%' }} src={Ambulancia} />
                     </Grid>
 
                     <Grid item style={{ paddingLeft: '5%', zIndex: 4 }} xs={12} sm={6} lg={6} >
@@ -403,12 +421,7 @@ function Inicio() {
 
             </div>
 
-            <div className={classes.formaFooter}>
-
-                <svg id="forma1" x="0px" y="0px" viewBox="0 0 100 100" width="100%" height="70px" preserveAspectRatio="none" >
-                    <path d="M 0,0 V 70 C 7.9990214,45.298551 24.219654,33.575192 41.425299,27.78744 63.669513,20.30478 90.636759,32.617451 100.27621,45.904857 L 100,0 Z"></path>
-                </svg>
-            </div>
+            
 
             <div className={classes.formaFooterDown}>
 

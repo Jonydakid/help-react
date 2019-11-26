@@ -2,6 +2,10 @@ body {
   background-color: #f7f5f5 !important;
 }
 
+#borderItem {
+  border: 5px inset rgba(28,110,164,0.11);
+  padding: 10px;
+}
 #contenido{
   display: flex;
   justify-content: center;
