@@ -78,7 +78,7 @@ const useStyles = makeStyles(theme => ({
 export default function ArticuloModal(props) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
-  const { titulo, descripcion, image } = props
+  const { titulo, descripcion, image,cuerpo,autor } = props
 
   const handleOpen = () => {
     setOpen(true);
@@ -126,7 +126,7 @@ export default function ArticuloModal(props) {
                 <Grid item container xs={6} >
                   <Grid item xs={3}>
                     <div >
-                      <p ><b>Autor:</b> Ejemplo </p><br />
+                      <p ><b>Autor:</b> {autor} </p><br />
                     </div>
 
                   </Grid>
@@ -147,12 +147,12 @@ export default function ArticuloModal(props) {
                 {/* Cuerpo */}
                 <Grid item xs={6}>
                     <h1 className={classes.titulo}>{titulo}</h1>
-                    <p className={classes.cuerpo}>{descripcion}</p>
+        <p className={classes.cuerpo}>{descripcion}</p>
                   </Grid>
                 
                 <Grid item xs={12}>
                   <p className={classes.cuerpo}>
-                    Pellentesque et dolor in ligula aliquam sollicitudin non nec nisi. Aenean tincidunt odio at bibendum vulputate. Aliquam cursus tellus vel ex suscipit aliquet. Maecenas vitae nisi velit. In ac enim ut risus sollicitudin pellentesque. In sit amet nibh orci. Nulla malesuada, eros a cursus vehicula, neque felis eleifend massa, non sodales enim nisi ac lectus. Aliquam dolor eros, sagittis eget ornare non, dictum sed mauris. Aenean molestie tincidunt elementum. Integer euismod sagittis ligula. Aenean ullamcorper faucibus orci, ac condimentum enim faucibus vel. Vestibulum fermentum sed ligula sit amet placerat. Aenean lectus tellus, imperdiet in odio ac, consequat varius massa. Fusce consectetur erat quis dui vehicula hendrerit a tempor nulla.
+                    {cuerpo}
                   </p>
                 </Grid>
               </Grid>
@@ -165,7 +165,7 @@ export default function ArticuloModal(props) {
   } else {
     return (
       <div>
-        <Button size="small" color="primary" onClick={handleOpen}>
+        <Button  size="small" color="primary" onClick={handleOpen}>
           Ver
           </Button>
         <Modal
@@ -216,11 +216,11 @@ export default function ArticuloModal(props) {
                 <Grid item xs={12}>
                   <h1 className={classes.titulo}>{titulo}</h1>
                   <p className={classes.cuerpo}>
-                  Pellentesque et dolor in ligula aliquam sollicitudin non nec nisi. Aenean tincidunt odio at bibendum vulputate. Aliquam cursus tellus vel ex suscipit aliquet. Maecenas vitae nisi velit. In ac enim ut risus sollicitudin pellentesque. In sit amet nibh orci. Nulla malesuada, eros a cursus vehicula, neque felis eleifend massa, non sodales enim nisi ac lectus. Aliquam dolor eros, sagittis eget ornare non, dictum sed mauris. Aenean molestie tincidunt elementum. Integer euismod sagittis ligula. Aenean ullamcorper faucibus orci, ac condimentum enim faucibus vel. Vestibulum fermentum sed ligula sit amet placerat. Aenean lectus tellus, imperdiet in odio ac, consequat varius massa. Fusce consectetur erat quis dui vehicula hendrerit a tempor nulla.
+                 {descripcion}
                   </p>
 
                   <p className={classes.cuerpo}>
-                    Pellentesque et dolor in ligula aliquam sollicitudin non nec nisi. Aenean tincidunt odio at bibendum vulputate. Aliquam cursus tellus vel ex suscipit aliquet. Maecenas vitae nisi velit. In ac enim ut risus sollicitudin pellentesque. In sit amet nibh orci. Nulla malesuada, eros a cursus vehicula, neque felis eleifend massa, non sodales enim nisi ac lectus. Aliquam dolor eros, sagittis eget ornare non, dictum sed mauris. Aenean molestie tincidunt elementum. Integer euismod sagittis ligula. Aenean ullamcorper faucibus orci, ac condimentum enim faucibus vel. Vestibulum fermentum sed ligula sit amet placerat. Aenean lectus tellus, imperdiet in odio ac, consequat varius massa. Fusce consectetur erat quis dui vehicula hendrerit a tempor nulla.
+                    {cuerpo}
                   </p>
                 </Grid>
               </Grid>

@@ -13,6 +13,8 @@ var style = makeStyles(theme => ({
         flexGrow: 1,
     },
     card: {
+        height:'100%',
+        width:'100%',
         padding: '8px',
         textAlign: 'center',
     },
@@ -20,6 +22,7 @@ var style = makeStyles(theme => ({
         height: '160px',
     },
     button: {
+        textAlign:'center',
         label: {
             color: '#3f51b5'
         }
@@ -39,19 +42,22 @@ var style = makeStyles(theme => ({
         [theme.breakpoints.down('sm')]: {
             fontSize: '18px'
         }
+    },
+    autor:{
+        paddingLeft:'2%'
     }
 }))
 
 
 export default function Articulo(props) {
-    const { titulo, descripcion, image } =  props.articulo;
+    const { titulo, descripcion, image, cuerpo,autor } =  props.articulo;
     const stl = style()
     return (
 
         <React.Fragment>
             <Grid item xs={6} md={3} spacing={3} >
                 <Card className={stl.card}>
-                    <CardActionArea>
+                    <CardActionArea style={{height:'90%'}}>
                         <CardMedia
                             component='img'
                             className={stl.media}
@@ -62,11 +68,16 @@ export default function Articulo(props) {
                             <Typography className={stl.titulo} >
                                 {titulo}
                             </Typography>
-                            
+                            <div style={{justifyContent:'center', fontWeight:'bold',display:'flex',paddingTop:'10%'}}>
+                                Autor: 
+                            <Typography className={stl.autor} >
+                                {autor}
+                            </Typography>
+                            </div>
                         </CardContent>
                     </CardActionArea>
-                    <CardActions>
-                        <ArticuloModal titulo={titulo} descripcion={descripcion} image={image} />
+                    <CardActions style={{justifyContent:'center'}}>
+                        <ArticuloModal titulo={titulo} descripcion={descripcion} image={image} cuerpo={cuerpo} autor={autor} />
                     </CardActions>
                 </Card>
             </Grid>
