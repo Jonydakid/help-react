@@ -6,6 +6,7 @@ import Articulos from "../pages/Articulos";
 import {makeStyles} from "@material-ui/core/styles";
 import About from "../pages/About";
 import Inicio from "../pages/Inicio"
+import Carrusel from './Carrusel/Carrusel';
 
 
 const useStyles = makeStyles(theme=>({
@@ -36,7 +37,7 @@ export default function Contenedor() {
     
     <Router>
       <Header />
-      
+      <Carrusel/>
       <div  className={stile.root}  >
         <Route exact path="/" component={Inicio}/>
         <Route path="/articulos" component={Articulos} />
