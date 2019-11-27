@@ -12,7 +12,7 @@ import "./Carrusel.css";
 // CREATE STYLES OBJECT
 //===========================================
 const s = {
-    container: "screenW screenH dGray col",
+    container: "screenW screenH dGray col ",
     header: "flex1 fCenter fSize2",
     main: "flex8 white",
     footer: "flex1 fCenter"

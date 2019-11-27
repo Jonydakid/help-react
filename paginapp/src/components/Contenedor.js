@@ -37,7 +37,6 @@ export default function Contenedor() {
     
     <Router>
       <Header />
-      <Carrusel/>
       <div  className={stile.root}  >
         <Route exact path="/" component={Inicio}/>
         <Route path="/articulos" component={Articulos} />

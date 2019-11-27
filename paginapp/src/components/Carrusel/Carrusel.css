@@ -12,6 +12,9 @@
 .fullW {
     width: 100%;
 }
+.ptop6 {
+    padding-top: 80px;
+}
 /*====== HEIGHT ======*/
 .screenH {
     height: 85vh;

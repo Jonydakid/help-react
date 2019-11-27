@@ -16,6 +16,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Container from "@material-ui/core/Container";
 import Ambulancia from "../static/images/ambulancia-rescatemedico.jpg";
 import Carousel, { Dots } from '@brainhubeu/react-carousel';
+import Carrusel from '../components/Carrusel/Carrusel';
 
 
 const useStyles = makeStyles(theme => ({
@@ -176,8 +177,7 @@ function Inicio() {
 
 
 
-            <Grid item xs={12}>
-            </Grid>
+            <Carrusel/>
 
 
 
