@@ -194,15 +194,15 @@ function Inicio() {
 
             <Grid item container xs={12} >
                 <Grid id="borderItem" item xs={12} sm={4} lg={4}>
-                    <h2  className={classes.serviciosTxt}><FontAwesomeIcon style={{ color: 'rgb(68, 149, 198)', paddingRight: '5px' }} icon={faFileSignature} />Contrate el Servicio </h2>
-                    <h2  className={classes.serviciosTxt}>934 400 227 </h2>
-                </Grid>
-                <Grid id="borderItem" item xs={12} sm={4} lg={4}>
-                    <h2 className={classes.emergenciaTxt}><FontAwesomeIcon style={{ color: 'red', paddingRight: '5px' }} icon={faAmbulance} />EMERGENCIA 800 800 911 </h2>
-                </Grid>
-                <Grid id="borderItem" item xs={12} sm={4} lg={4}>
                     <h2 className={classes.serviciosTxt} ><FontAwesomeIcon style={{ color: 'rgb(68, 149, 198)', paddingRight: '5px' }} icon={faFolderOpen} />Servicio al cliente</h2>
-                    <h2  className={classes.serviciosTxt}>600 6310 310</h2>
+                    <h2  className={classes.serviciosTxt}><a href="tel:6006310310" className={classes.serviciosTxt}>600 6310 310</a></h2>
+                </Grid>
+                <Grid id="borderItem" item xs={12} sm={4} lg={4}>
+                    <h2 className={classes.emergenciaTxt}><FontAwesomeIcon style={{ color: 'red', paddingRight: '5px' }} icon={faAmbulance} />EMERGENCIA <a href="tel:6006310310" className={classes.emergenciaTxt}>800 800 911</a> </h2>
+                </Grid>
+                <Grid id="borderItem" item xs={12} sm={4} lg={4}>
+                    <h2  className={classes.serviciosTxt}><FontAwesomeIcon style={{ color: 'rgb(68, 149, 198)', paddingRight: '5px' }} icon={faFileSignature} />Área de Ventas </h2>
+                    <h2  className={classes.serviciosTxt}><a href="tel:6006310310" className={classes.serviciosTxt}>934 400 227</a> </h2>
                 </Grid>
 
             </Grid>
@@ -268,7 +268,7 @@ function Inicio() {
 
 
 
-
+            
 
 
             <div className={classes.formaFooter}>

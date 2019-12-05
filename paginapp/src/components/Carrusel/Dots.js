@@ -8,7 +8,7 @@ import Dot from "./Dot";
 // STYLE OBJECT
 //===========================================
 const s = {
-    container: "fullW height70 abs bot0 fCenter black50"
+    container: "fullW height70 abs bot0 fCenter aero"
 };
 
 //===========================================

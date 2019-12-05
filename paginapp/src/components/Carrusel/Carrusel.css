@@ -12,15 +12,21 @@
 .fullW {
     width: 100%;
 }
+.halfW {
+    width: 60%;
+}
 .ptop6 {
     padding-top: 80px;
 }
 /*====== HEIGHT ======*/
 .screenH {
-    height: 85vh;
+    height: 70vh;
 }
 .fullH {
     height: 100%;
+}
+.halfH {
+    height: 60%;
 }
 .height70 {
     height: 70px;
@@ -37,6 +43,9 @@
 }
 .black50 {
     background-color: #00000080;
+}
+.aero{
+    background-color: rgba(201,255,229,0.35);
 }
 /*====== FONT ======*/
 .fSize2 {
@@ -104,3 +113,23 @@
     border-radius: 5px;
     transition: background-color 1s ease-in-out;
 }
+#sliTxt{
+    float: left !important;
+    
+}
+
+#slimages{
+    float: right !important;
+    
+}
+
+@media only screen and (max-width: 600px) {
+    #slimages{
+        float: none !important;
+        width: 100%;
+    }
+
+    #sliTxt{
+        display: none;
+    }
+  }

@@ -3,9 +3,9 @@
 //===========================================
 import React, { Component } from "react";
 import Slideshow from "./Slideshow.js";
-import slide1 from "./imgs/car1.PNG";
-import slide2 from "./imgs/slide2.jpg";
-import slide3 from "./imgs/slide3.jpg";
+import slide1 from "./imgs/doctora.jpg";
+import slide2 from "./imgs/bebe2.png";
+import slide3 from "./imgs/camion.png";
 import "./Carrusel.css";
 
 //===========================================
@@ -31,9 +31,12 @@ class Carrusel extends Component {
         return (
             <div className={s.container}>
                 <div className={s.main}>
+                    
                     <Slideshow slides={slides} />
                 </div>
             </div>
+
+
         );
     }
 }

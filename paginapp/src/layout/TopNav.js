@@ -63,7 +63,7 @@ export default function TopNav(props) {
                     <Toolbar>
 
                         <Typography variant="h6" className={classes.title}>
-                            <Link color='inherit' underline='none' href='/'>Servicio Rescate Medico</Link>
+                            <Link color='inherit' underline='none' href='/'>Servicio de Rescate Médico</Link>
                         </Typography>
 
                         <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">

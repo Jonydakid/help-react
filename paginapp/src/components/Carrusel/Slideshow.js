@@ -17,19 +17,37 @@ const s = {
 //===========================================
 // STYLES OBJECT slide
 //===========================================
+
 const sl = {
     container: "abs fullW fullH",
-    slideImage: "fullH fullW imgCover"
+    slideImage: "halfW fullH imgCover",
+
+    formaCarro: {
+        marginLeft: '0% !important;',
+
+        left: '0',
+        width: '100%',
+        marginTop: '-30px',
+        float:'left',
+        backgroundColor:'black'
+    }
 };
 
 //===========================================
 // SLIDE FUNCTIONAL COMPONENT
 //===========================================
+
+
 const Slide = ({ position, transition, image }) => {
+    
     return (
         <div className={sl.container + " " + position + " " + transition}>
-            <img src={image} className={sl.slideImage} alt="slide" />
+            <p id="sliTxt"> asasdasdasdasdasdasd</p>
+            <img src={image} id="slimages" className={sl.slideImage} alt="slide" />
+            
         </div>
+        
+
     );
 };
 //===========================================
