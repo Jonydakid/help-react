@@ -2,7 +2,7 @@ import React from 'react'
 import Grid from '@material-ui/core/Grid'
 import { withStyles } from '@material-ui/styles'
 import Typography from '@material-ui/core/Typography'
-import { faAmbulance, faPhone, faBriefcaseMedical, faUserMd, faHeartbeat, faPaperPlane, faEnvelope,faUser,faFolderOpen,faFileSignature } from '@fortawesome/free-solid-svg-icons'
+import { faAmbulance, faPhone, faBriefcaseMedical, faUserMd, faHeartbeat, faPaperPlane, faEnvelope, faUser, faFolderOpen, faFileSignature } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button'
@@ -13,6 +13,7 @@ import Collapse from '@material-ui/core/Collapse';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Ambulancia from "../static/images/ambulancia-rescatemedico.jpg";
 import Carrusel from '../components/Carrusel/Carrusel';
+
 
 
 const useStyles = makeStyles(theme => ({
@@ -64,17 +65,17 @@ const useStyles = makeStyles(theme => ({
         width: '100%',
         position: "absolute",
         [theme.breakpoints.down('sm')]: {
-          
+
         },
         [theme.breakpoints.up('sm')]: {
-          
+
         },
         [theme.breakpoints.up('lg')]: {
-        
+
         },
         [theme.breakpoints.down('xs')]: {
 
-          
+
         },
     },
     formaFooterDown: {
@@ -84,16 +85,16 @@ const useStyles = makeStyles(theme => ({
         left: '0',
         width: '100%',
         [theme.breakpoints.down('sm')]: {
-        
+
         },
         [theme.breakpoints.up('sm')]: {
-          
+
         },
         [theme.breakpoints.down('xs')]: {
-           
+
         },
         [theme.breakpoints.up('lg')]: {
-            
+
 
         }
     },
@@ -103,7 +104,7 @@ const useStyles = makeStyles(theme => ({
         height: '650px',
 
         left: '0',
-        float:'left',
+        float: 'left',
         position: "absolute",
         zIndex: '0',
 
@@ -115,11 +116,11 @@ const useStyles = makeStyles(theme => ({
 
         },
         [theme.breakpoints.up('sm')]: {
- 
+
         },
         [theme.breakpoints.down('sm')]: {
-            
-        height: '890px',
+
+            height: '890px',
         },
         [theme.breakpoints.up('lg')]: {
 
@@ -127,25 +128,25 @@ const useStyles = makeStyles(theme => ({
     },
 
     serviciosTxt: {
-        
+
         color: 'rgb(68, 149, 198)',
         textAlign: 'center',
         [theme.breakpoints.down('xs')]: {
-            fontSize:'140%',
-            marginTop:'10px',
+            fontSize: '140%',
+            marginTop: '10px',
         }
     },
     emergenciaTxt: {
-        marginTop:'20px',
+        marginTop: '20px',
         color: 'red',
         textAlign: 'center',
         [theme.breakpoints.down('sm')]: {
-            fontSize:'160%',
-            marginTop:'20px',
-            marginBottom:'10px'
+            fontSize: '160%',
+            marginTop: '20px',
+            marginBottom: '10px'
         }
     },
-    
+
 
 }))
 
@@ -178,19 +179,29 @@ function Inicio() {
     const handleChange = name => event => {
         setValues({ ...values, [name]: event.target.value });
     };
+    const handleSubmit=(event)=> {
+        const templateId = 'template_OrcUrFqP';
+
+        sendFeedback(templateId, {name: values.name, email: values.email, phone:values.fono,com:values.comentario,comuna:values.comuna,beneficiarios:values.nbeneficiariosedades,cmr:CMRchecked,lugar:values.lugardetrabajo })
+    }
+
+    const sendFeedback =(templateId, variables) =>{
+        window.emailjs.send(
+            'gmail', templateId,
+            variables
+        ).then(res => {
+            console.log('Email enviado correctamente!')
+        })
+            // Handle errors here however you like, or use a React error boundary
+            .catch(err => console.error('Ha ocurrido un error, acá algo de información!:', err))
+    }
     return (
 
         <React.Fragment>
 
+            <Carrusel />
 
 
-
-
-
-
-            <Carrusel/>
-
-               
 
             <Grid item container xs={12} >
                 <Grid id="borderItem" item xs={12} sm={4} lg={4}>
@@ -206,7 +217,7 @@ function Inicio() {
                 </Grid>
 
             </Grid>
-            <br />  <br />  <br />                
+            <br />  <br />  <br />
 
             <Grid container style={{ padding: 30 }}>
                 <Grid xs={12} sm={6} lg={6}>
@@ -280,12 +291,12 @@ function Inicio() {
 
 
             <div id="sec2">
-               
+
 
                 <Grid container style={{ marginTop: '2%', zIndex: 3 }} >
 
-                    <Grid  align="center" item xs={12} sm={6} lg={6} style={{ zIndex: 4 }}>
-                        <img alt='HelpAmbulancia' style={{ width:'70%', marginTop:'50px', marginLeft:'5%' }} src={Ambulancia} />
+                    <Grid align="center" item xs={12} sm={6} lg={6} style={{ zIndex: 4 }}>
+                        <img alt='HelpAmbulancia' style={{ width: '70%', marginTop: '50px', marginLeft: '5%' }} src={Ambulancia} />
                     </Grid>
 
                     <Grid item style={{ paddingLeft: '5%', zIndex: 4 }} xs={12} sm={6} lg={6} >
@@ -395,7 +406,7 @@ function Inicio() {
                             </Grid>
                             <Grid item style={{ textAlign: 'center' }} xs={12} sm={12}>
 
-                                <Button className={classes.boton} >Enviar<FontAwesomeIcon styles={{ paddingLeft: '5px' }} icon={faPaperPlane} /></Button>
+                                <Button className={classes.boton} onClick={handleSubmit}>Enviar<FontAwesomeIcon styles={{ paddingLeft: '5px' }} icon={faPaperPlane} /></Button>
 
                             </Grid>
 
@@ -421,7 +432,7 @@ function Inicio() {
 
             </div>
 
-            
+
 
             <div className={classes.formaFooterDown}>
 
@@ -436,6 +447,8 @@ function Inicio() {
 
         </React.Fragment >
     )
+    
+    
 }
 
 export default withStyles(useStyles)(Inicio);
