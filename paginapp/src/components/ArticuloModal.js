@@ -37,7 +37,6 @@ const useStyles = makeStyles(theme => ({
     float: 'left',
     [theme.breakpoints.down('xs')]: {
 
-      padding: '1%'
     }
   },
   titulo: {
@@ -48,7 +47,8 @@ const useStyles = makeStyles(theme => ({
   cuerpo: {
     fontFamily: 'Arial',
     display: 'flex',
-    margin: '2%',
+    margin: '3%',
+    textAlign: 'justify',
 
   },
   autor: {
@@ -69,7 +69,7 @@ const useStyles = makeStyles(theme => ({
     background: 'rgba(255, 0, 0, 0.4)',
   },
   closediv:{
-    backgroundImage: `url(${imagen})`,
+    backgroundColor:'#E6E6E6',
     repeat:'repeat',
   }
 

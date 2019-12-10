@@ -6,8 +6,8 @@ import MenuItem from '@material-ui/core/MenuItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
-import DraftsIcon from '@material-ui/icons/Drafts';
-import SendIcon from '@material-ui/icons/Send';
+import DescriptionIcon from '@material-ui/icons/Description';
+import HomeIcon from '@material-ui/icons/Home';
 
 const StyledMenu = withStyles({
   paper: {
@@ -77,22 +77,17 @@ export default function CustomizedMenus() {
 
         <StyledMenuItem button component="a" href="/">
           <ListItemIcon>
-            <SendIcon />
+            <HomeIcon />
           </ListItemIcon>
           <ListItemText primary="Inicio" />
         </StyledMenuItem>
         <StyledMenuItem button component="a" href="/articulos">
           <ListItemIcon>
-            <DraftsIcon />
+            <DescriptionIcon />
           </ListItemIcon>
           <ListItemText primary="Articulos" />
         </StyledMenuItem>
-        <StyledMenuItem button component="a" href="/about">
-          <ListItemIcon>
-            <InboxIcon />
-          </ListItemIcon>
-          <ListItemText primary="About" />
-        </StyledMenuItem>
+       
       </StyledMenu>
     </div>
   );

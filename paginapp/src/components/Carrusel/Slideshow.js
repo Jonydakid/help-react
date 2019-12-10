@@ -46,9 +46,9 @@ const Slide = ({ position, transition, image,titulo,descripcion }) => {
     
     return (
         <div className={sl.container + " " + position + " " + transition}>
-            <div className={sl.block} >
-                <Typography variant="h4" style={{color:'Green',textAlign:'center'}}>{titulo}</Typography>
-                <Typography variant="h5" style={{color:'Black',textAlign:'center'}}>{descripcion}</Typography>
+            <div id="txtCarrusel" className={sl.block} >
+                <Typography variant="h4" style={{color:'Green',textAlign:'center',marginTop:'3%'}}>{titulo}</Typography>
+                <Typography variant="h5" style={{color:'Black',textAlign:'center',margin:'4%'}}>{descripcion}</Typography>
             </div>
             
             <div >
@@ -107,7 +107,7 @@ class Slideshow extends Component {
     startCarousel = () => {
         this.carouselInterval = setInterval(() => {
             this.transitionSlides();
-        }, 6000);
+        }, 16000);
     };
 
     setSlideState = (slide1, slide2, currentId) => {

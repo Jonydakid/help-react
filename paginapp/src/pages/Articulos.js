@@ -11,9 +11,11 @@ export default class Articulos extends Component {
     state = {
         articulos: []
     }
-    componentWillMount() {
+    componentDidMount() {
         axios.get('https://api.myjson.com/bins/8b0j6')
             .then(res => this.setState({ articulos: res.data }))
+
+            document.getElementById("loader").style.display = "none";
     }
     /*
       return this.state.articulos.map((articulo)=>(

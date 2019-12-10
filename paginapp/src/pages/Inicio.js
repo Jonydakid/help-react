@@ -1,4 +1,4 @@
-import React from 'react'
+import React , { useState } from 'react'
 import Grid from '@material-ui/core/Grid'
 import { withStyles } from '@material-ui/styles'
 import Typography from '@material-ui/core/Typography'
@@ -155,6 +155,7 @@ const useStyles = makeStyles(theme => ({
 
 
 function Inicio() {
+    const [altoFondoGrad,setAltoFondoGrad] = useState(false);
     const classes = useStyles();
     const [values, setValues] = React.useState({
         name: '',
@@ -171,6 +172,21 @@ function Inicio() {
 
     const handleCheck = () => {
         setChecked(prev => !prev);
+        if(altoFondoGrad===false){
+            if(window.innerWidth < 500)
+            document.getElementById("fondoGrad2").style.height = "1196px";
+            else
+            document.getElementById("fondoGrad2").style.height = "926px";
+            setAltoFondoGrad(true);
+        }
+        else{ 
+            if(window.innerWidth < 500)
+            document.getElementById("fondoGrad2").style.height = "930px";
+            else
+            document.getElementById("fondoGrad2").style.height = "645px";
+            setAltoFondoGrad(false);
+        }
+       
     };
 
     const handleCheckCMR = () => {
@@ -195,8 +211,11 @@ function Inicio() {
             // Handle errors here however you like, or use a React error boundary
             .catch(err => console.error('Ha ocurrido un error, acá algo de información!:', err))
     }
-    return (
 
+    document.getElementById("loader").style.display = "none";
+
+    return (
+        
         <React.Fragment>
 
             <Carrusel />
@@ -275,7 +294,7 @@ function Inicio() {
 
 
 
-            <div className={classes.fondoGrad2}></div>
+            <div id="fondoGrad2" className={classes.fondoGrad2}></div>
 
 
 

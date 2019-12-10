@@ -1,6 +1,17 @@
 body {
   background-color: #f7f5f5 !important;
 }
+.MuiCardActions-root{
+  background-color:#00DA51;
+}
+.MuiButton-textPrimary{
+  color: whitesmoke !important;
+}
+
+#loader{
+  padding-top: 2%;
+
+}
 
 #borderItem {
   border: 5px inset rgba(28,110,164,0.11);
@@ -178,7 +189,9 @@ body {
       float: right;
      
     }
-
+    #txtCarrusel{
+      display: none;
+    }
     .textoSld2{
       font-size: 105%;
       text-align: justify;
