@@ -3,12 +3,15 @@
 //===========================================
 import React, { Component } from "react";
 import Dots from "./Dots";
+import Typography from "@material-ui/core/Typography";
+
+
 
 //===========================================
 // CREATE STYLES OBJECT
 //===========================================
 const s = {
-    container: "fullW fullH rel overflowH",
+    container: "fullW screenH rel overflowH",
     onScreen: "left0",
     offScreenRight: "left100vw",
     offScreenLeft: "leftM100vw",
@@ -19,8 +22,9 @@ const s = {
 //===========================================
 
 const sl = {
-    container: "abs fullW fullH",
-    slideImage: "halfW fullH imgCover",
+    container: "dFlex abs fullW fullH dGray",
+    slideImage: "fullW fullH imgCover",
+    block:"dBlock halfW",
 
     formaCarro: {
         marginLeft: '0% !important;',
@@ -38,12 +42,20 @@ const sl = {
 //===========================================
 
 
-const Slide = ({ position, transition, image }) => {
+const Slide = ({ position, transition, image,titulo,descripcion }) => {
     
     return (
         <div className={sl.container + " " + position + " " + transition}>
-            <p id="sliTxt"> asasdasdasdasdasdasd</p>
-            <img src={image} id="slimages" className={sl.slideImage} alt="slide" />
+            <div className={sl.block} >
+                <Typography variant="h4" style={{color:'Green',textAlign:'center'}}>{titulo}</Typography>
+                <Typography variant="h5" style={{color:'Black',textAlign:'center'}}>{descripcion}</Typography>
+            </div>
+            
+            <div >
+                
+                <img src={image} id="slimages" className={sl.slideImage}  />
+            </div>
+            
             
         </div>
         
@@ -55,18 +67,31 @@ const Slide = ({ position, transition, image }) => {
 //===========================================
 class Slideshow extends Component {
     constructor(props) {
+
         super(props);
         this.state = {
-            slide1: {
-                id: 0,
-                position: s.onScreen,
-                transition: true
-            },
-            slide2: {
-                id: 1,
-                position: s.offScreenRight,
-                transition: true
-            },
+                slide1: {
+                    titulo:"Help Rescate Médico",
+                    descripcion:"Frente a una emergencia o urgencia médica le enviaremos un móvil al lugar del incidente, con un doctor(a), un enfermero(a) y un paramedico(a).",
+                    id: 0,
+                    position: s.onScreen,
+                    transition: true
+                },
+                slide2: {
+                    titulo:"Help Rescate Médico",
+                    descripcion:"En una situación de emergencia y de riesgo vital, los primeros minutos son clave.",
+                    id: 1,
+                    position: s.offScreenRight,
+                    transition: true
+                },
+                slide3:{
+                    titulo:"Help Rescate Médico",
+                    descripcion:"Nuestros pacientes son estabilizados en el lugar del incidente, luego son trasladados si es necesario.",
+                    id: 3,
+                    position: s.offScreenLeft,
+                    transition: true
+                },
+            
             currentId: 0
         };
     }
@@ -87,8 +112,8 @@ class Slideshow extends Component {
 
     setSlideState = (slide1, slide2, currentId) => {
         this.setState({
-            slide1: slide1,
-            slide2: slide2,
+            slides:{slide1: slide1},
+            slides:{slide2:slide2},
             currentId: currentId
         });
     };
@@ -136,19 +161,30 @@ class Slideshow extends Component {
     };
 
     render() {
-        const { slide1, slide2, currentId } = this.state;
+        const { slide1, slide2,slide3, currentId } = this.state;
         const { slides } = this.props;
         return (
             <div className={s.container}>
                 <Slide
+                    titulo={slide1.titulo}
+                    descripcion={slide1.descripcion}
                     image={slides[slide1.id]}
                     position={slide1.position}
                     transition={slide1.transition ? s.transition : ""}
                 />
                 <Slide
+                    titulo={slide2.titulo}
+                    descripcion={slide2.descripcion}
                     image={slides[slide2.id]}
                     position={slide2.position}
                     transition={slide2.transition ? s.transition : ""}
+                />
+                <Slide
+                    titulo={slide3.titulo}
+                    descripcion={slide3.descripcion}
+                    image={slides[slide3.id]}
+                    position={slide3.position}
+                    transition={slide3.transition ? s.transition : ""}
                 />
                 <Dots slideId={currentId} slides={slides} />
             </div>
