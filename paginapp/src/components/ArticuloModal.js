@@ -59,26 +59,35 @@ const useStyles = makeStyles(theme => ({
   centered: {
     float: 'center'
   },
-  lefted:{
-    float:'left'
+  lefted: {
+    float: 'left'
   },
   close: {
-    
+
     position: 'relative',
     float: 'right',
     background: 'rgba(255, 0, 0, 0.4)',
   },
-  closediv:{
+  closediv: {
     backgroundImage: `url(${imagen})`,
-    repeat:'repeat',
+    repeat: 'repeat',
   }
 
 }));
+function formatTxt(text) {
+  
+  return (
+  <div>
+      {text.split("/").map((i,key) => {
+          return <div key={key}>{i}</div>;
+      })}
+  </div>);
+}
 
 export default function ArticuloModal(props) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
-  const { titulo, descripcion, image,cuerpo,autor } = props
+  const { titulo, descripcion, image, cuerpo, autor } = props
 
   const handleOpen = () => {
     setOpen(true);
@@ -115,7 +124,7 @@ export default function ArticuloModal(props) {
 
               <Grid container xs={12}>
                 {/* Botones */}
-                
+
                 <Grid className={classes.closediv} item xs={12}>
                   <Button className={classes.close} onClick={onClick}>
                     <Close />
@@ -142,21 +151,21 @@ export default function ArticuloModal(props) {
                     <img className={classes.img} alt="Imagen de articulo" src={image} />
                   </Grid>
 
-                  
+
                 </Grid>
                 {/* Cuerpo */}
                 <Grid item xs={6}>
-                    <h1 className={classes.titulo}>{titulo}</h1>
-        <p className={classes.cuerpo}>{descripcion}</p>
-                  </Grid>
-                
+                  <h1 className={classes.titulo}>{formatTxt(titulo)}</h1>
+                  <p className={classes.cuerpo}>{formatTxt(descripcion)}</p>
+                </Grid>
+
                 <Grid item xs={12}>
                   <p className={classes.cuerpo}>
-                    {cuerpo}
+                    {formatTxt(cuerpo)}
                   </p>
                 </Grid>
               </Grid>
-              
+
             </div>
           </Grow>
         </Modal>
@@ -165,7 +174,7 @@ export default function ArticuloModal(props) {
   } else {
     return (
       <div>
-        <Button  size="small" color="primary" onClick={handleOpen}>
+        <Button size="small" color="primary" onClick={handleOpen}>
           Ver
           </Button>
         <Modal
@@ -183,8 +192,8 @@ export default function ArticuloModal(props) {
           <Grow in={open}>
             <div className={classes.paper}>
               <Grid container xs={12}>
-              
-                <Grid className={classes.closediv}item xs={12}>
+
+                <Grid className={classes.closediv} item xs={12}>
                   <Button className={classes.close} onClick={onClick}>
                     <Close />
                   </Button>
@@ -194,14 +203,14 @@ export default function ArticuloModal(props) {
                 <Grid item container xs={12} >
                   <Grid item xs={6}>
                     <div >
-                      <p style={{padding:'5%'}}><b>Autor:</b> Ejemplo </p><br />
+                      <p style={{ padding: '5%' }}><b>Autor:</b> Ejemplo </p><br />
                     </div>
 
                   </Grid>
 
                   <Grid item xs={6}>
                     <div >
-                      <p style={{padding:'5%'}}><b>Fecha:</b> 01 de enero del 01 </p><br />
+                      <p style={{ padding: '5%' }}><b>Fecha:</b> 01 de enero del 01 </p><br />
                     </div>
                   </Grid>
 
@@ -216,7 +225,7 @@ export default function ArticuloModal(props) {
                 <Grid item xs={12}>
                   <h1 className={classes.titulo}>{titulo}</h1>
                   <p className={classes.cuerpo}>
-                 {descripcion}
+                    {descripcion}
                   </p>
 
                   <p className={classes.cuerpo}>

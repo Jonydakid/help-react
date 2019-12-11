@@ -12,7 +12,7 @@ export default class Articulos extends Component {
         articulos: []
     }
     componentWillMount() {
-        axios.get('https://api.myjson.com/bins/8b0j6')
+        axios.get('https://api.myjson.com/bins/qy644')
             .then(res => this.setState({ articulos: res.data }))
     }
     /*
