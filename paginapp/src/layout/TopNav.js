@@ -29,7 +29,7 @@ const useStyles = makeStyles(theme => ({
         display:'block',
         width: '100%',
         zIndex: '10',
-        background: 'linear-gradient(0deg, rgba(97,172,64,0.43601190476190477) 0%, rgba(255,255,255,0.41360294117647056) 100%)',
+        background: 'linear-gradient(0deg, rgba(0,218,81,0.88601190476190477) 0%, rgba(255,255,255,0.41360294117647056) 100%)',
         padding:'0px 0px 10px 0px'
         ,margin:'0px 0px 1% 0px'
     }

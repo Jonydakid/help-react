@@ -79,7 +79,7 @@ function formatTxt(text) {
   return (
   <div>
       {text.split("/").map((i,key) => {
-          return <div key={key}>{i}</div>;
+          return <div key={key}>{i}<br /></div>;
       })}
   </div>);
 }
@@ -103,10 +103,14 @@ export default function ArticuloModal(props) {
   const matches = useMediaQuery('(max-width:500px)');
   if (!matches) {
     return (
-      <div>
-        <Button size="small" color="primary" onClick={handleOpen}>
-          Ver
-          </Button>
+      <div >
+        <div >
+          <div style={ {alignSelf: 'flex-end' }}>
+            <Button size="small" color="primary" onClick={handleOpen}>
+              Ver 
+              </Button>
+          </div>
+        </div>
         <Modal
           aria-labelledby="transition-modal-title"
           aria-describedby="transition-modal-description"
@@ -141,14 +145,12 @@ export default function ArticuloModal(props) {
                   </Grid>
 
                   <Grid item xs={3}>
-                    <div className={classes.centered}>
-                      <p ><b>Fecha:</b> 01 de enero del 01 </p><br />
-                    </div>
+                 
                   </Grid>
 
                   {/* Imagen */}
                   <Grid item xs={12}>
-                    <img className={classes.img} alt="Imagen de articulo" src={image} />
+                    <img style={{ height: 'auto' }} className={classes.img} alt="Imagen de articulo" src={image} />
                   </Grid>
 
 
@@ -203,16 +205,16 @@ export default function ArticuloModal(props) {
                 <Grid item container xs={12} >
                   <Grid item xs={6}>
                     <div >
-                      <p style={{ padding: '5%' }}><b>Autor:</b> Ejemplo </p><br />
+                      <p style={{ padding: '5%' }}><b>Autor:</b> {autor} </p><br />
+                  
                     </div>
 
                   </Grid>
-
-                  <Grid item xs={6}>
-                    <div >
-                      <p style={{ padding: '5%' }}><b>Fecha:</b> 01 de enero del 01 </p><br />
-                    </div>
+                  
+                  <Grid item xs={3}>
+                 
                   </Grid>
+
 
                   {/* Imagen */}
                   <Grid item xs={12}>
@@ -223,13 +225,14 @@ export default function ArticuloModal(props) {
 
 
                 <Grid item xs={12}>
-                  <h1 className={classes.titulo}>{titulo}</h1>
-                  <p className={classes.cuerpo}>
-                    {descripcion}
-                  </p>
+
+                  <h1 className={classes.titulo}>{formatTxt(titulo)}</h1>
+                  <p className={classes.cuerpo}>{formatTxt(descripcion)}</p>
+
+               
 
                   <p className={classes.cuerpo}>
-                    {cuerpo}
+                    {formatTxt(cuerpo)}
                   </p>
                 </Grid>
               </Grid>

@@ -49,7 +49,16 @@ var style = makeStyles(theme => ({
 }))
 
 
-
+function formatTxt(text) {
+  
+    return (
+    <div>
+        {text.split("/").map((i,key) => {
+            return <div key={key}>{i}<br /></div>;
+        })}
+    </div>);
+  }
+  
 
 
 export default function Articulo(props) {
@@ -60,7 +69,7 @@ export default function Articulo(props) {
         <React.Fragment>
             <Grid item xs={6} md={3} spacing={3} >
                 <Card className={stl.card}>
-                    <CardActionArea style={{ height: '90%' }}>
+                    <CardActionArea style={{ height: '90%', height: 'auto'}}>
                         <CardMedia
                             component='img'
                             className={stl.media}
@@ -69,7 +78,7 @@ export default function Articulo(props) {
                         />
                         <CardContent>
                             <Typography className={stl.titulo} >
-                                {titulo}
+                            {formatTxt(titulo)}
                             </Typography>
                             <div style={{ justifyContent: 'center', fontWeight: 'bold', display: 'flex', paddingTop: '10%' }}>
                                 Autor:
@@ -79,9 +88,14 @@ export default function Articulo(props) {
                             </div>
                         </CardContent>
                     </CardActionArea>
+
+                    
                     <CardActions style={{ justifyContent: 'center' }}>
+                    <div style={{ display: 'flex' }}>
                         <ArticuloModal titulo={titulo} descripcion={descripcion} image={image} cuerpo={cuerpo} autor={autor} />
+                        </div>
                     </CardActions>
+                    
                 </Card>
             </Grid>
         </React.Fragment>
