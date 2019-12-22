@@ -15,7 +15,7 @@ export default class Articulos extends Component {
         axios.get('https://api.myjson.com/bins/12i0sk')
             .then(res => this.setState({ articulos: res.data }))
 
-            document.getElementById("loader").style.display = "none";
+        document.getElementById("loader").style.display = "none";
     }
     /*
       return this.state.articulos.map((articulo)=>(

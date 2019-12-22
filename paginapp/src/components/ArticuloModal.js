@@ -223,13 +223,13 @@ export default function ArticuloModal(props) {
 
 
                 <Grid item xs={12}>
-                  <h1 className={classes.titulo}>{titulo}</h1>
+                  <h1 className={classes.titulo}>{formatTxt(titulo)}</h1>
                   <p className={classes.cuerpo}>
-                    {descripcion}
+                    {formatTxt(descripcion)}
                   </p>
 
                   <p className={classes.cuerpo}>
-                    {cuerpo}
+                    {formatTxt(cuerpo)}
                   </p>
                 </Grid>
               </Grid>
