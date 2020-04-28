@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React , { useState } from 'react'
 import Grid from '@material-ui/core/Grid'
 import { withStyles } from '@material-ui/styles'
 import Typography from '@material-ui/core/Typography'
@@ -155,13 +155,13 @@ const useStyles = makeStyles(theme => ({
 
 
 function Inicio() {
-    const [altoFondoGrad, setAltoFondoGrad] = useState(false);
+    const [altoFondoGrad,setAltoFondoGrad] = useState(false);
     const classes = useStyles();
     const [values, setValues] = React.useState({
         name: '',
         email: '',
         fono: '',
-        message: '',
+        comentario: '',
         comuna: '',
         nbeneficiariosedades: '',
         lugardetrabajo: '',
@@ -172,60 +172,50 @@ function Inicio() {
 
     const handleCheck = () => {
         setChecked(prev => !prev);
-        if (altoFondoGrad === false) {
-            if (window.innerWidth < 500)
-                document.getElementById("fondoGrad2").style.height = "1196px";
+        if(altoFondoGrad===false){
+            if(window.innerWidth < 500)
+            document.getElementById("fondoGrad2").style.height = "1196px";
             else
-                document.getElementById("fondoGrad2").style.height = "926px";
+            document.getElementById("fondoGrad2").style.height = "926px";
             setAltoFondoGrad(true);
         }
-        else {
-            if (window.innerWidth < 500)
-                document.getElementById("fondoGrad2").style.height = "930px";
+        else{ 
+            if(window.innerWidth < 500)
+            document.getElementById("fondoGrad2").style.height = "930px";
             else
-                document.getElementById("fondoGrad2").style.height = "645px";
+            document.getElementById("fondoGrad2").style.height = "645px";
             setAltoFondoGrad(false);
         }
-
+       
     };
 
     const handleCheckCMR = () => {
         setCMRChecked(prev => !prev);
     };
     const handleChange = name => event => {
-        
         setValues({ ...values, [name]: event.target.value });
     };
-    const handleSubmit = (event) => {
+    const handleSubmit=(event)=> {
         const templateId = 'template_OrcUrFqP';
-        
 
-        
-            sendFeedback(templateId, { name: values.name, email: values.email, phone: values.fono, com: values.message, comuna: values.comuna, beneficiarios: values.nbeneficiariosedades, cmr: CMRchecked, lugar: values.lugardetrabajo })
-            setValues({
-                name: " ",
-                email: " ",
-                message: " "
-            })
-        
-
+        sendFeedback(templateId, {name: values.name, email: values.email, phone:values.fono,com:values.comentario,comuna:values.comuna,beneficiarios:values.nbeneficiariosedades,cmr:CMRchecked,lugar:values.lugardetrabajo })
     }
 
-    const sendFeedback = (templateId, variables) => {
+    const sendFeedback =(templateId, variables) =>{
         window.emailjs.send(
             'gmail', templateId,
             variables
         ).then(res => {
-            alert('Email enviado correctamente!')
+            console.log('Email enviado correctamente!')
         })
             // Handle errors here however you like, or use a React error boundary
-            .catch(err => alert('Ha ocurrido un error, acá algo de información!:', err))
+            .catch(err => console.error('Ha ocurrido un error, acá algo de información!:', err))
     }
 
     document.getElementById("loader").style.display = "none";
 
     return (
-
+        
         <React.Fragment>
 
             <Carrusel />
@@ -235,14 +225,14 @@ function Inicio() {
             <Grid item container xs={12} >
                 <Grid id="borderItem" item xs={12} sm={4} lg={4}>
                     <h2 className={classes.serviciosTxt} ><FontAwesomeIcon style={{ color: 'rgb(68, 149, 198)', paddingRight: '5px' }} icon={faFolderOpen} />Servicio al cliente</h2>
-                    <h2 className={classes.serviciosTxt}><a href="tel: 6006310310" className={classes.serviciosTxt}>600 6310 310</a></h2>
+                    <h2  className={classes.serviciosTxt}><a href="tel:6006310310" className={classes.serviciosTxt}>600 6310 310</a></h2>
                 </Grid>
                 <Grid id="borderItem" item xs={12} sm={4} lg={4}>
                     <h2 className={classes.emergenciaTxt}><FontAwesomeIcon style={{ color: 'red', paddingRight: '5px' }} icon={faAmbulance} />EMERGENCIA <a href="tel:6006310310" className={classes.emergenciaTxt}>800 800 911</a> </h2>
                 </Grid>
                 <Grid id="borderItem" item xs={12} sm={4} lg={4}>
-                    <h2 className={classes.serviciosTxt}><FontAwesomeIcon style={{ color: 'rgb(68, 149, 198)', paddingRight: '5px' }} icon={faFileSignature} />Área de Ventas </h2>
-                    <h2 className={classes.serviciosTxt}><a href="tel: 6006310310" className={classes.serviciosTxt}>934 400 227</a> </h2>
+                    <h2  className={classes.serviciosTxt}><FontAwesomeIcon style={{ color: 'rgb(68, 149, 198)', paddingRight: '5px' }} icon={faFileSignature} />Área de Ventas </h2>
+                    <h2  className={classes.serviciosTxt}><a href="tel:6006310310" className={classes.serviciosTxt}>934 400 227</a> </h2>
                 </Grid>
 
             </Grid>
@@ -308,7 +298,7 @@ function Inicio() {
 
 
 
-
+            
 
 
             <div className={classes.formaFooter}>
@@ -332,10 +322,9 @@ function Inicio() {
                         <Typography style={{ color: 'rgb(0,0,0)', paddingTop: '5%' }} variant="h5">
                             <FontAwesomeIcon icon={faEnvelope} /> Solicite un presupuesto</Typography>
 
-                        <form autoComplete="off" onSubmit={handleSubmit}>
+                        <form noValidate autoComplete="off">
                             <Grid item xs={12} sm={12}>
                                 <TextField
-                                    required
                                     id="outlined-name"
                                     label="Nombre"
                                     className={classes.textField}
@@ -347,9 +336,6 @@ function Inicio() {
                             </Grid>
                             <Grid item xs={12} sm={12}>
                                 <TextField
-                                    
-                                    type="email"
-                                    required
                                     id="outlined-name"
                                     label="E-Mail"
                                     className={classes.textField}
@@ -361,7 +347,6 @@ function Inicio() {
                             </Grid>
                             <Grid item xs={12} sm={12}>
                                 <TextField
-
                                     id="outlined-name"
                                     label="Telefono"
                                     className={classes.textField}
@@ -373,12 +358,11 @@ function Inicio() {
                             </Grid>
                             <Grid item xs={12} sm={12}>
                                 <TextField
-                                    required
                                     id="outlined-name"
-                                    label="Mensaje"
+                                    label="Comentarios"
                                     className={classes.textField}
-                                    value={values.message}
-                                    onChange={handleChange('message')}
+                                    value={values.comentario}
+                                    onChange={handleChange('comentario')}
                                     margin="normal"
                                     variant="outlined"
                                 />
@@ -441,7 +425,7 @@ function Inicio() {
                             </Grid>
                             <Grid item style={{ textAlign: 'center' }} xs={12} sm={12}>
 
-                                <Button type="submit" id="btnSubmit" className={classes.boton}>Enviar<FontAwesomeIcon styles={{ paddingLeft: '5px' }} icon={faPaperPlane} /></Button>
+                                <Button className={classes.boton} onClick={handleSubmit}>Enviar<FontAwesomeIcon styles={{ paddingLeft: '5px' }} icon={faPaperPlane} /></Button>
 
                             </Grid>
 
@@ -482,8 +466,8 @@ function Inicio() {
 
         </React.Fragment >
     )
-
-
+    
+    
 }
 
 export default withStyles(useStyles)(Inicio);
