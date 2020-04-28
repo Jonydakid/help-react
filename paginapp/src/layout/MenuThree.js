@@ -87,6 +87,12 @@ export default function CustomizedMenus() {
           </ListItemIcon>
           <ListItemText primary="Articulos" />
         </StyledMenuItem>
+        <StyledMenuItem button component="a" href="/consultaVirtual">
+          <ListItemIcon>
+            <DescriptionIcon />
+          </ListItemIcon>
+          <ListItemText primary="Consulta Virtual" />
+        </StyledMenuItem>
        
       </StyledMenu>
     </div>

@@ -6,6 +6,7 @@ import Articulos from "../pages/Articulos";
 import { makeStyles } from "@material-ui/core/styles";
 import About from "../pages/About";
 import Inicio from "../pages/Inicio"
+import ConsultaVirtual from "../pages/ConsultaVirtual"
 import { Alerts } from './Alerts/Alerts';
 import { Provider as AlertProvider } from 'react-alert'
 import AlertTemplate from 'react-alert-template-basic'
@@ -46,6 +47,7 @@ export default function Contenedor() {
             <Route exact path="/" component={Inicio} />
             <Route path="/articulos" component={Articulos} />
             <Route path="/about" component={About} />
+            <Route path="/consultaVirtual" component={ConsultaVirtual}/>
           </div>
         </Router>
       </Fragment>
